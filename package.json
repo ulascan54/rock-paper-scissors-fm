@@ -1,0 +1,12 @@
+{
+  "name": "rock-paper-scissors-fm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "npx tailwindcss -i tailwind.css -o content/style.css  --minify",
+    "watch": "npx tailwindcss -i tailwind.css -o content/style.css  -w --minify"
+  },
+  "author": "",
+  "license": "ISC"
+}
