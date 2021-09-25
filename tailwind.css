@@ -1,4 +1,7 @@
 @tailwind base;
+*{
+    box-sizing: border-box;
+}
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
@@ -8,10 +11,37 @@ body{
     background-image: radial-gradient(hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
     @apply w-full h-screen pt-12;
 }
-
-.btn-s{
-    background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-    @apply w-10  h-10; 
+.btn{
+    @apply flex items-center rounded-full justify-center w-[150px] h-[150px];
 }
+
+.btn-rock{
+    background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    border-bottom: 6px solid hsl(349, 76%, 50%);
+}
+.btn-paper{
+    background-image: linear-gradient(hsl(230, 89%, 62%) ,hsl(230, 89%, 65%));
+    border-bottom: 6px solid hsl(230, 81%, 54%);
+
+}
+.btn-scissors{
+    background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    border-bottom: 6px solid hsl(39, 100%, 39%);
+
+}
+.btn-lizard{
+    background-image: linear-gradient(hsl(261, 73%, 60%) , hsl(261, 72%, 63%));
+    border-bottom: 6px solid hsl(261, 84%, 49%);
+
+}
+.btn-spock{
+    background-image: linear-gradient(hsl(189, 59%, 53%) , hsl(189, 58%, 57%));
+    border-bottom: 6px solid hsl(189, 96%, 36%);
+
+}
+.btn-inner{
+    @apply border-t-4 border border-Header-Outline border-opacity-50 bg-white flex rounded-full items-center justify-center w-[80%] h-[80%];
+}
+
 
 @tailwind utilities;
