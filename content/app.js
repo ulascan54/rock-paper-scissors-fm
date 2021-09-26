@@ -64,9 +64,10 @@ const startBattle=()=>{
 }
 
 const compRandomReset=(selected)=>{
-    comp_action.children.forEach(el => {
-        el.classList.add('none')
-    });
+        for (let index = 1; index < comp_action.children.length; index++) {
+            comp_action.children[index].classList.add('none')
+            
+        }
     selected.classList.remove('none')
 }
 
@@ -93,11 +94,11 @@ let randomComp=()=>{
         }
 }
 
-
 const visibleChoice=(choice)=>{
-    user_action.children.forEach(el => {
-        el.classList.add('none')
-    });
+    for (let index = 1; index < comp_action.children.length; index++) {
+        user_action.children[index].classList.add('none')
+        
+    }
     choice.classList.remove('none')
 }
 
@@ -220,8 +221,6 @@ const game=()=>{
     }, 5000);
 }
 
-
-
 // restart
 restrat.forEach(el => {
     el.addEventListener('click',()=>{
@@ -239,40 +238,3 @@ restrat.forEach(el => {
         }, 500);
     })
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
