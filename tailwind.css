@@ -210,5 +210,10 @@ body{
 .none{
     display: none;
 }
-
+.attribution{
+    @apply absolute bottom-0  left-[50%]  translate-x-[-50%] text-gray-400;
+}
+.attribution a{
+    @apply font-bold underline  text-white;
+}
 @tailwind utilities;
