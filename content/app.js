@@ -1,3 +1,5 @@
+const score_p=document.getElementById('score')
+
 const modalBtn=document.getElementById('modal-button')
 const modal=document.getElementById('modal')
 const modalClose=document.getElementById('modalClose')

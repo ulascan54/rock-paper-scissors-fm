@@ -1,16 +1,12 @@
 @tailwind base;
-*{
-    box-sizing: border-box;
-}
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
-    overflow-x: hidden
+    overflow-x: hidden;
 }
 @tailwind components;
-
 .main{
     background-image: radial-gradient(hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
-    @apply w-full h-screen pt-12;
+    @apply w-full h-screen   p-8 md:p-0 md:pt-12;
 }
 .btn{
     @apply flex items-center transition-all cursor-pointer rounded-full justify-center w-[150px] h-[150px] ;
@@ -108,6 +104,26 @@ body{
 }
 .btn-inner{
     @apply border-t-4 border border-Header-Outline border-opacity-50 bg-white flex rounded-full items-center justify-center w-[80%] h-[80%];
+}
+
+/* header */
+.header{
+    @apply flex items-center justify-between mb-12 md:px-8 md:py-5 p-5  mx-auto border-4  border-Header-Outline rounded-2xl  max-w-[700px];
+}
+.header img {
+    @apply h-[70px] md:h-full;
+}
+.header-scoreboard{
+    @apply bg-white flex items-center flex-col justify-center rounded-md h-[70px] w-[80px]  md:h-[114px] md:w-[160px] p-3 ;
+}
+.header-scoretext{
+    @apply font-semibold tracking-widest text-[0.7rem] md:text-[1rem] text-Score-Text h-[20%];
+}
+.header-response{
+    @apply relative flex-grow font-bold w-full text-[45px] md:text-[70px] text-Dark-Text h-[80%] ;
+}
+.header-responsetext{
+    @apply absolute inset-0 my-0 mx-auto  text-center  -top-2  md:-top-3;
 }
 
 @tailwind utilities;
