@@ -35,12 +35,14 @@ const choice_lizard_div=document.getElementById('c-lizard')
 const choice_spock_div=document.getElementById('c-spock')
 
 const battle_div=document.getElementById('battle')
-const battle_response_div=document.querySelectorAll('.battle-response')
+const battle_response_div=document.querySelectorAll('.b-response')
 const user_action=document.querySelector('.action-user')
+const comp_action=document.querySelector('.action-comp')
 const winner=document.querySelectorAll('.who-winner')
 const restrat=document.querySelectorAll('.again')
 
 let userChoice='';
+let comp_random=1;
 
 const startBattle=()=>{
     battle_div.classList.add('animate__bounceIn')
@@ -53,6 +55,39 @@ const startBattle=()=>{
     }, 500);
 }
 
+const compRandomReset=(selected)=>{
+    comp_action.children[1].classList.add('none')
+    comp_action.children[2].classList.add('none')
+    comp_action.children[3].classList.add('none')
+    comp_action.children[4].classList.add('none')
+    comp_action.children[5].classList.add('none')
+    selected.classList.remove('none')
+}
+
+let randomComp=()=>{
+        if(comp_random==1){
+            compRandomReset(comp_action.children[comp_random])
+            comp_random++
+        }
+        else if(comp_random==2){
+            compRandomReset(comp_action.children[comp_random])
+            comp_random++
+        }
+        else if(comp_random==3){
+            compRandomReset(comp_action.children[comp_random])
+            comp_random++
+        }
+        else if(comp_random==4){
+            compRandomReset(comp_action.children[comp_random])
+            comp_random++
+        }
+        else{
+            compRandomReset(comp_action.children[comp_random])
+            comp_random=1
+        }
+}
+
+
 const visibleChoice=(choice)=>{
     user_action.children[1].classList.add('none')
     user_action.children[2].classList.add('none')
@@ -60,6 +95,28 @@ const visibleChoice=(choice)=>{
     user_action.children[4].classList.add('none')
     user_action.children[5].classList.add('none')
     choice.classList.remove('none')
+}
+
+const getComputerChoice= ()=>{
+    const choices=['rock','paper','scissors','lizard','spock']
+    const choice= choices[Math.floor(Math.random()*5)]
+    console.log(choice);
+    if(choice=='rock'){
+        compRandomReset(comp_action.children[1])
+    }
+    else if(choice=='paper'){
+        compRandomReset(comp_action.children[2])
+    }
+    else if(choice=='scissors'){
+        compRandomReset(comp_action.children[3])
+    }
+    else if(choice=='lizard'){
+        compRandomReset(comp_action.children[4])
+    }
+    else if(choice=='spock'){
+        compRandomReset(comp_action.children[5])
+    }
+    return choice
 }
 
 const getUserChoice=(userChoice)=>{
@@ -84,6 +141,7 @@ choice_rock_div.addEventListener('click',()=>{
     startBattle()
     userChoice='rock'
     getUserChoice(userChoice)
+    game()
 })
 choice_paper_div.addEventListener('click',()=>{
     startBattle()
@@ -105,6 +163,17 @@ choice_spock_div.addEventListener('click',()=>{
     userChoice='spock'
     getUserChoice(userChoice)
 })
+
+
+const game=()=>{
+    let random_comp = setInterval(randomComp, 500);
+    let compChoice=null
+    setTimeout(() => {
+        clearInterval(random_comp)
+        compChoice=getComputerChoice()
+    }, 5000);
+}
+
 
 
 // restart
