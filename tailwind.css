@@ -202,7 +202,7 @@ body{
     @apply opacity-40 text-3xl cursor-pointer;
 }
 .rules{
-    @apply fixed md:right-8 md:bottom-8 md:w-auto z-10  bottom-8  w-full inset-0 flex items-end justify-center md:justify-end;
+    @apply fixed md:right-8 md:bottom-8 md:w-auto z-10 left-0   bottom-5 h-auto  w-full flex items-end justify-center md:justify-end;
 }
 .btn-rules{
     @apply text-white border rounded-lg px-9 py-3 font-semibold tracking-widest transition-all hover:text-Dark-Text hover:bg-white  text-[1rem];
