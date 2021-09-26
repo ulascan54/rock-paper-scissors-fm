@@ -20,11 +20,6 @@ modalClose.forEach(el => {
 });
 
 
-
-
-
-
-
 const score_p=document.getElementById('score')
 
 const  choiceList_div=document.getElementById('choice-list')
@@ -43,6 +38,19 @@ const restrat=document.querySelectorAll('.again')
 
 let userChoice='';
 let comp_random=1;
+let score=0
+
+const effect=document.createElement('div')
+effect.id='effect'
+effect.className='winner-effect animate__animated  animate__faster animate__rotateIn'
+effect.innerHTML=`
+<div class="winner-inner " style="background-color: rgba(72, 114, 170, .10) ;">
+<div class="winner-inner " style="background-color: rgba(72, 114, 170, .15);">
+<div class="winner-inner " style="background-color: rgba(72, 114, 170, .0);">
+</div>
+</div>
+</div>
+`
 
 const startBattle=()=>{
     battle_div.classList.add('animate__bounceIn')
@@ -56,11 +64,9 @@ const startBattle=()=>{
 }
 
 const compRandomReset=(selected)=>{
-    comp_action.children[1].classList.add('none')
-    comp_action.children[2].classList.add('none')
-    comp_action.children[3].classList.add('none')
-    comp_action.children[4].classList.add('none')
-    comp_action.children[5].classList.add('none')
+    comp_action.children.forEach(el => {
+        el.classList.add('none')
+    });
     selected.classList.remove('none')
 }
 
@@ -89,11 +95,9 @@ let randomComp=()=>{
 
 
 const visibleChoice=(choice)=>{
-    user_action.children[1].classList.add('none')
-    user_action.children[2].classList.add('none')
-    user_action.children[3].classList.add('none')
-    user_action.children[4].classList.add('none')
-    user_action.children[5].classList.add('none')
+    user_action.children.forEach(el => {
+        el.classList.add('none')
+    });
     choice.classList.remove('none')
 }
 
@@ -147,21 +151,25 @@ choice_paper_div.addEventListener('click',()=>{
     startBattle()
     userChoice='paper'
     getUserChoice(userChoice)
+    game()
 })
 choice_scissors_div.addEventListener('click',()=>{
     startBattle()
     userChoice='scissors'
     getUserChoice(userChoice)
+    game()
 })
 choice_lizard_div.addEventListener('click',()=>{
     startBattle()
     userChoice='lizard'
     getUserChoice(userChoice)
+    game()
 })
 choice_spock_div.addEventListener('click',()=>{
     startBattle()
     userChoice='spock'
     getUserChoice(userChoice)
+    game()
 })
 
 
@@ -171,6 +179,44 @@ const game=()=>{
     setTimeout(() => {
         clearInterval(random_comp)
         compChoice=getComputerChoice()
+        if(userChoice==compChoice){
+            winner.forEach(el => {
+                el.textContent='DRAW'
+            });
+            battle_response_div.forEach(el=>{
+                el.classList.remove('none')
+            })
+        }
+        else if(userChoice=='rock' && compChoice=='lizard' || userChoice=='rock' && compChoice=='scissors' || userChoice=='lizard' && compChoice=='spock' || userChoice=='lizard' && compChoice=='paper' || userChoice=='spock' && compChoice=='scissors' || userChoice=='spock' && compChoice=='rock' || userChoice=='scissors' && compChoice=='paper' || userChoice=='scissors' && compChoice=='lizard' ||userChoice=='paper' && compChoice=='rock' ||userChoice=='paper' && compChoice=='spock'){
+            winner.forEach(el => {
+                el.textContent='YOU WIN'
+            });
+            battle_response_div.forEach(el=>{
+                el.classList.remove('none')
+            })
+            score++
+            score_p.textContent=score
+            if(userChoice=='rock'){user_action.children[1].appendChild(effect)}
+            else if(userChoice=='paper'){user_action.children[2].appendChild(effect)}
+            else if(userChoice=='scissors'){user_action.children[3].appendChild(effect)}
+            else if(userChoice=='lizard'){user_action.children[4].appendChild(effect)}
+            else if(userChoice=='spock'){user_action.children[5].appendChild(effect)}
+        }
+        else{
+            winner.forEach(el => {
+                el.textContent='YOU LOSE'
+            });
+            battle_response_div.forEach(el=>{
+                el.classList.remove('none')
+            })
+            score--
+            score_p.textContent=score
+            if(compChoice=='rock'){comp_action.children[1].appendChild(effect)}
+            else if(compChoice=='paper'){comp_action.children[2].appendChild(effect)}
+            else if(compChoice=='scissors'){comp_action.children[3].appendChild(effect)}
+            else if(compChoice=='lizard'){comp_action.children[4].appendChild(effect)}
+            else if(compChoice=='spock'){comp_action.children[5].appendChild(effect)}
+        }
     }, 5000);
 }
 
@@ -186,6 +232,10 @@ restrat.forEach(el => {
         setTimeout(() => {
             choiceList_div.classList.remove('none')
             battle_div.classList.add('none')
+            battle_response_div.forEach(el=>{
+                el.classList.add('none')
+            })
+            document.getElementById('effect').remove()
         }, 500);
     })
 });
