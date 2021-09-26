@@ -4,6 +4,7 @@
 }
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
+    overflow-x: hidden
 }
 @tailwind components;
 
@@ -20,6 +21,28 @@ body{
     -ms-transform: perspective(1000px);
     -o-transform: perspective(1000px);
 }
+.btn{
+    @apply flex items-center transition-all cursor-pointer rounded-full justify-center w-[150px] h-[150px] ;
+    transform-style:preserve-3d;
+    transform: perspective(1000px);
+    -webkit-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    -ms-transform: perspective(1000px);
+    -o-transform: perspective(1000px);
+}
+.btn-lg{
+    @apply flex items-center transition-all rounded-full justify-center w-[300px] h-[300px] ;
+    transform-style:preserve-3d;
+    transform: perspective(1000px);
+    -webkit-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    -ms-transform: perspective(1000px);
+    -o-transform: perspective(1000px);
+}
+.btn-lg img{
+    @apply w-[120px]
+}
+
 .btn img{
     transform: translateZ(40px);
     -webkit-transform: translateZ(40px);
@@ -86,6 +109,5 @@ body{
 .btn-inner{
     @apply border-t-4 border border-Header-Outline border-opacity-50 bg-white flex rounded-full items-center justify-center w-[80%] h-[80%];
 }
-
 
 @tailwind utilities;
