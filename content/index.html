@@ -1,47 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="main">
         <!-- header -->
-        <div class="flex items-center justify-between mb-12 px-8 py-5  mx-auto border-2 solid border-Header-Outline rounded-2xl  max-w-[700px]">
+        <div
+            class="flex items-center justify-between mb-12 px-8 py-5  mx-auto border-2 solid border-Header-Outline rounded-2xl  max-w-[700px]">
             <div> <img src="images/logo-bonus.svg"></div>
             <div class="bg-white flex items-center flex-col justify-center rounded-md h-[114px] w-[160px] p-3 ">
                 <div class="font-semibold tracking-widest text-[1rem] text-Score-Text h-[20%]">SCORE</div>
-                <div class="relative flex-grow font-bold w-full text-[70px] text-Dark-Text h-[80%] "><p class="absolute inset-0 my-0 mx-auto  text-center  -top-3"> 12</p></div>
+                <div class="relative flex-grow font-bold w-full text-[70px] text-Dark-Text h-[80%] ">
+                    <p class="absolute inset-0 my-0 mx-auto  text-center  -top-3">0</p>
+                </div>
             </div>
         </div>
         <!-- content -->
-        <div class="bg-center bg-no-repeat flex max-w-[500px] h-[500px] my-0 mx-auto relative" style="background-image: url('images/bg-pentagon.svg'); ">
+        <div class="bg-center bg-no-repeat flex max-w-[500px] h-[500px] my-0 mx-auto relative"
+            style="background-image: url('images/bg-pentagon.svg'); ">
             <div class="btn btn-rock absolute bottom-5 right-16" data-tilt data-tilt-scale="1.1">
                 <div class="btn-inner"><img src="images/icon-rock.svg"></div>
             </div>
-            <div class="btn btn-paper absolute top-36 left-5" data-tilt data-tilt-scale="1.1">
+            <div class="btn btn-paper absolute top-36 right-5" data-tilt data-tilt-scale="1.1">
                 <div class="btn-inner"><img src="images/icon-paper.svg"></div>
             </div>
-            <div class="btn btn-scissors absolute top-36 right-5" data-tilt data-tilt-scale="1.1">
+            <div class="btn btn-scissors absolute left-44" data-tilt data-tilt-scale="1.1">
                 <div class="btn-inner"><img src="images/icon-scissors.svg"></div>
             </div>
             <div class="btn btn-lizard absolute bottom-5 left-16" data-tilt data-tilt-scale="1.1">
                 <div class="btn-inner"><img src="images/icon-lizard.svg"></div>
             </div>
-            <div class="btn btn-spock absolute left-44" data-tilt data-tilt-scale="1.1">
+            <div class="btn btn-spock  absolute top-36 left-5 " data-tilt data-tilt-scale="1.1">
                 <div class="btn-inner"><img src="images/icon-spock.svg"></div>
             </div>
         </div>
         <!-- rules modal -->
-
+        <div class="fixed inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 z-20 hidden transition-all animate__animated  animate__fast "
+            id="modal">
+            <div class="bg-white px-9 py-10 rounded-xl">
+                <div class="flex justify-between  text-3xl mb-5">
+                    <p class="text-Dark-Text font-bold">RULES</p>
+                   <span class="material-icons opacity-40 text-3xl cursor-pointer" id="modalClose">close</span>
+                </div>
+                <img src="images/image-rules-bonus.svg" alt="">
+            </div>
+        </div>
+        <div class="fixed bottom-8 right-8 z-10">
+            <button type="button"
+                class="btn-rules text-white border rounded-lg px-9 py-3 font-semibold tracking-widest transition-all hover:text-Dark-Text hover:bg-white  text-[1rem]"
+                id="modal-button">RULES</button>
+        </div>
         <script type="text/javascript" src="vanilla-tilt.js"></script>
         <script src="app.js"></script>
     </div>
 </body>
+
 </html>
