@@ -1,6 +1,8 @@
 @tailwind base;
 body{
     font-family: 'Barlow Semi Condensed', sans-serif;
+    max-width: 100vw;
+    max-height: 100vh;
     overflow-x: hidden;
 }
 @tailwind components;
@@ -23,7 +25,7 @@ body{
 }
 
 .btn-lg{
-    @apply flex items-center transition-all rounded-full justify-center w-[300px] h-[300px] ;
+    @apply flex items-center transition-all rounded-full justify-center  w-[140px] h-[140px]   lg:w-[300px] lg:h-[300px] ;
     transform-style:preserve-3d;
     transform: perspective(1000px);
     -webkit-transform: perspective(1000px);
@@ -32,7 +34,7 @@ body{
     -o-transform: perspective(1000px);
 }
 .btn-lg img{
-    @apply w-[120px]
+    @apply lg:w-[120px] w-[50px]
 }
 
 .btn img{
@@ -138,4 +140,48 @@ body{
 .btn-container .btn-spock{
     @apply absolute sm:top-36 sm:left-5  top-44 -left-10;
 }
+/* battle */
+.battle{
+    @apply w-full flex flex-col items-center justify-center text-white text-2xl tracking-widest text-center mt-24 lg:mt-0 ;
+}
+.battle .battle-container{
+    @apply flex items-center justify-between 
+}
+.action{
+    @apply w-[180px] lg:w-[300px] flex  flex-col justify-center items-center;
+}
+.action-user{
+    @apply lg:mr-10;
+}
+
+.action-comp{
+    @apply  lg:ml-10;
+}
+.action-text-lg{
+    @apply pt-8 mb-16  relative z-20 hidden lg:block;
+}
+.action-text{
+    @apply pt-8 mb-16  relative z-20 block text-sm lg:hidden w-full text-center;
+}
+.battle-response-lg{
+    @apply  w-[230px] mx-10 z-20 hidden lg:block ;
+}
+.battle-response{
+    @apply  w-[230px] mx-10 z-20 block lg:hidden ;
+}
+.response-text{
+    @apply text-5xl font-bold mb-6 ;
+}
+.response-button{
+    @apply w-full bg-white text-Dark-Text text-base py-4 rounded-lg border  hover:bg-opacity-0 tracking-widest transition-all hover:text-white  ;
+}
+.winner-effect{
+    @apply flex items-center justify-center absolute bg-red-100   rounded-full w-[135%] h-[135%] lg:w-[200%] lg:h-[200%];
+    background-color: rgba(72, 114, 170, .05) ;
+    z-index: -10;
+}
+.winner-inner{
+    @apply flex items-center justify-center  rounded-full w-[92%] h-[92%] lg:w-[80%] lg:h-[80%];
+}
+
 @tailwind utilities;
