@@ -28,7 +28,7 @@
             </div>
         </div>
         <!-- content -->
-            <div class="btn-container hidden">
+            <div class="btn-container ">
                 <div class="btn btn-rock " data-tilt data-tilt-scale="1.1">
                 <div class="btn-inner"><img src="images/icon-rock.svg"></div>
             </div>
@@ -47,7 +47,7 @@
         </div>
         <!-- battle -->
         <div
-            class="battle">
+            class="battle hidden">
             <div class="battle-container">
                 <div class="action action-user ">
                     <p class="action-text-lg">YOU PICKED</p>
@@ -80,14 +80,14 @@
                     <div class="btn-lg btn-rock relative ">
                         <div class="btn-inner"><img src="images/icon-rock.svg"></div>
 
-                        <div class="winner-effect">
+                        <!-- <div class="winner-effect">
                             <div class="winner-inner " style="background-color: rgba(72, 114, 170, .10) ;">
                             <div class="winner-inner " style="background-color: rgba(72, 114, 170, .15);">
                             <div class="winner-inner btn-rock " >
                             </div>
                             </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                     <div class="btn-lg btn-paper hidden">
@@ -115,19 +115,27 @@
         </div>
 
         <!-- rules modal -->
-        <div class="fixed inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 z-20 hidden transition-all animate__animated  animate__fast "
+        <div class=" modal animate__animated  animate__fast none "
             id="modal">
-            <div class="bg-white px-9 py-10 rounded-xl">
-                <div class="flex justify-between  text-3xl mb-5">
-                    <p class="text-Dark-Text font-bold">RULES</p>
-                    <span class="material-icons opacity-40 text-3xl cursor-pointer" id="modalClose">close</span>
+            <div class="modal-container-lg">
+                <div class=" modal-header">
+                    <p class="modal-title">RULES</p>
+                    <span class="material-icons modal-btn modalClose" >close</span>
                 </div>
                 <img src="images/image-rules-bonus.svg" alt="">
             </div>
+            <div class="modal-container">
+                <div class=" modal-header">
+                    <p class="modal-title">RULES</p>
+                </div>
+                <img src="images/image-rules-bonus.svg" alt="">
+                <span class="material-icons modal-btn modalClose" >close</span>
+
+            </div>
         </div>
-        <div class="fixed bottom-8 right-8 z-10">
+        <div class="rules">
             <button type="button"
-                class="btn-rules text-white border rounded-lg px-9 py-3 font-semibold tracking-widest transition-all hover:text-Dark-Text hover:bg-white  text-[1rem]"
+                class="btn-rules "
                 id="modal-button">RULES</button>
         </div>
         <script type="text/javascript" src="vanilla-tilt.js"></script>

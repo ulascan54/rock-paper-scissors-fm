@@ -25,7 +25,7 @@ body{
 }
 
 .btn-lg{
-    @apply flex items-center transition-all rounded-full justify-center  w-[140px] h-[140px]   lg:w-[300px] lg:h-[300px] ;
+    @apply flex items-center transition-all rounded-full justify-center  w-[140px] h-[140px] md:h-[300px] md:w-[300px]   lg:w-[300px] lg:h-[300px] ;
     transform-style:preserve-3d;
     transform: perspective(1000px);
     -webkit-transform: perspective(1000px);
@@ -34,7 +34,7 @@ body{
     -o-transform: perspective(1000px);
 }
 .btn-lg img{
-    @apply lg:w-[120px] w-[50px]
+    @apply lg:w-[120px] md:w-[110px] w-[50px]
 }
 
 .btn img{
@@ -107,7 +107,7 @@ body{
 
 /* header */
 .header{
-    @apply flex items-center justify-between mb-12 md:px-8 md:py-5 p-5  mx-auto border-4  border-Header-Outline rounded-2xl  max-w-[700px];
+    @apply flex items-center justify-between sm:mb-12 md:px-8 md:py-5 p-5  mx-auto border-4  border-Header-Outline rounded-2xl  max-w-[700px];
 }
 .header img {
     @apply h-[70px] md:h-full;
@@ -148,10 +148,10 @@ body{
     @apply flex items-center justify-between 
 }
 .action{
-    @apply w-[180px] lg:w-[300px] flex  flex-col justify-center items-center;
+    @apply w-[180px] md:w-[300px] lg:w-[300px] flex  flex-col justify-center items-center;
 }
 .action-user{
-    @apply lg:mr-10;
+    @apply md:mr-10 lg:mr-10;
 }
 
 .action-comp{
@@ -161,7 +161,7 @@ body{
     @apply pt-8 mb-16  relative z-20 hidden lg:block;
 }
 .action-text{
-    @apply pt-8 mb-16  relative z-20 block text-sm lg:hidden w-full text-center;
+    @apply pt-8 mb-16  relative z-20 block text-sm md:text-2xl lg:hidden w-full text-center;
 }
 .battle-response-lg{
     @apply  w-[230px] mx-10 z-20 hidden lg:block ;
@@ -182,6 +182,33 @@ body{
 }
 .winner-inner{
     @apply flex items-center justify-center  rounded-full w-[92%] h-[92%] lg:w-[80%] lg:h-[80%];
+}
+.modal{
+    @apply fixed inset-0 flex items-center justify-center w-full h-full bg-black bg-opacity-50 z-20 transition-all ;
+}
+.modal-container-lg {
+    @apply bg-white px-9 py-10 rounded-xl hidden sm:block;
+}
+.modal-container {
+    @apply bg-white px-9 py-10 rounded-xl block sm:hidden  h-screen w-full sm:h-auto sm:w-auto flex flex-col items-center justify-around sm:block;
+}
+.modal-header{
+    @apply flex justify-between  text-3xl mb-5;
+}
+.modal-title{
+    @apply text-Dark-Text font-bold;
+}
+.modal-btn{
+    @apply opacity-40 text-3xl cursor-pointer;
+}
+.rules{
+    @apply fixed md:right-8 md:bottom-8 md:w-auto z-10  bottom-8  w-full inset-0 flex items-end justify-center md:justify-end;
+}
+.btn-rules{
+    @apply text-white border rounded-lg px-9 py-3 font-semibold tracking-widest transition-all hover:text-Dark-Text hover:bg-white  text-[1rem];
+}
+.none{
+    display: none;
 }
 
 @tailwind utilities;
