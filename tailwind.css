@@ -8,8 +8,12 @@ body{
     background-image: radial-gradient(hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
     @apply w-full h-screen   p-8 md:p-0 md:pt-12;
 }
+.btn-container{
+    @apply  bg-center bg-contain sm:bg-auto bg-no-repeat flex w-[250px] h-[500px] sm:w-[500px] sm:h-[500px] my-0 mx-auto relative;
+    background-image: url('images/bg-pentagon.svg');
+}
 .btn{
-    @apply flex items-center transition-all cursor-pointer rounded-full justify-center w-[150px] h-[150px] ;
+    @apply flex items-center transition-all cursor-pointer rounded-full justify-center sm:w-[150px] sm:h-[150px] w-[110px] h-[110px];
     transform-style:preserve-3d;
     transform: perspective(1000px);
     -webkit-transform: perspective(1000px);
@@ -17,15 +21,7 @@ body{
     -ms-transform: perspective(1000px);
     -o-transform: perspective(1000px);
 }
-.btn{
-    @apply flex items-center transition-all cursor-pointer rounded-full justify-center w-[150px] h-[150px] ;
-    transform-style:preserve-3d;
-    transform: perspective(1000px);
-    -webkit-transform: perspective(1000px);
-    -moz-transform: perspective(1000px);
-    -ms-transform: perspective(1000px);
-    -o-transform: perspective(1000px);
-}
+
 .btn-lg{
     @apply flex items-center transition-all rounded-full justify-center w-[300px] h-[300px] ;
     transform-style:preserve-3d;
@@ -40,6 +36,7 @@ body{
 }
 
 .btn img{
+    @apply w-[40px] sm:w-auto ;
     transform: translateZ(40px);
     -webkit-transform: translateZ(40px);
     -moz-transform: translateZ(40px);
@@ -125,5 +122,20 @@ body{
 .header-responsetext{
     @apply absolute inset-0 my-0 mx-auto  text-center  -top-2  md:-top-3;
 }
-
+/* content */
+.btn-container .btn-rock{
+    @apply absolute sm:bottom-5 sm:right-16 bottom-20 right-0;
+}
+.btn-container .btn-paper{
+    @apply absolute sm:top-36 sm:right-5 top-44 -right-10;
+}
+.btn-container .btn-scissors{
+    @apply absolute sm:left-44 left-16 top-20 sm:top-0;
+}
+.btn-container .btn-lizard{
+    @apply absolute sm:bottom-5 sm:left-16 bottom-20 left-0;
+}
+.btn-container .btn-spock{
+    @apply absolute sm:top-36 sm:left-5  top-44 -left-10;
+}
 @tailwind utilities;
