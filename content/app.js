@@ -105,7 +105,6 @@ const visibleChoice=(choice)=>{
 const getComputerChoice= ()=>{
     const choices=['rock','paper','scissors','lizard','spock']
     const choice= choices[Math.floor(Math.random()*5)]
-    console.log(choice);
     if(choice=='rock'){
         compRandomReset(comp_action.children[1])
     }
@@ -175,7 +174,7 @@ choice_spock_div.addEventListener('click',()=>{
 
 
 const game=()=>{
-    let random_comp = setInterval(randomComp, 500);
+    let random_comp = setInterval(randomComp, 200);
     let compChoice=null
     setTimeout(() => {
         clearInterval(random_comp)
@@ -218,7 +217,7 @@ const game=()=>{
             else if(compChoice=='lizard'){comp_action.children[4].appendChild(effect)}
             else if(compChoice=='spock'){comp_action.children[5].appendChild(effect)}
         }
-    }, 5000);
+    }, 2000);
 }
 
 // restart
@@ -234,7 +233,9 @@ restrat.forEach(el => {
             battle_response_div.forEach(el=>{
                 el.classList.add('none')
             })
-            document.getElementById('effect').remove()
+            if(document.getElementById('effect')){
+                document.getElementById('effect').remove()
+            }
         }, 500);
     })
 });

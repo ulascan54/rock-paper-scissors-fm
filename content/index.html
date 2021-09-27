@@ -16,33 +16,35 @@
 </head>
 
 <body>
-    <div class="main">
+    <div class="container-master">
         <!-- header -->
-        <div class="header ">
-            <div> <img src="images/logo-bonus.svg"></div>
+        <header class="header ">
+            <div> <img src="images/logo-bonus.svg" alt="logo"></div>
             <div class="header-scoreboard">
                 <div class="header-scoretext">SCORE</div>
                 <div class="header-response">
                     <p class="header-responsetext" id="score">0</p>
                 </div>
             </div>
-        </div>
+        </header>
+        <main>
+
         <!-- content -->
             <div class="btn-container animate__animated  animate__faster" id="choice-list">
-                <div class="btn btn-rock " data-tilt data-tilt-scale="1.1" id="c-rock">
-                <div class="btn-inner"><img src="images/icon-rock.svg"></div>
+                <div class="btn btn-rock"  data-tilt data-tilt-scale="1.1" id="c-rock">
+                <div class="btn-inner"><img src="images/icon-rock.svg" alt="rock-icon"></div>
                 </div>
-            <div class="btn btn-paper " data-tilt data-tilt-scale="1.1" id="c-paper">
-                <div class="btn-inner"><img src="images/icon-paper.svg"></div>
+            <div class="btn btn-paper" data-tilt data-tilt-scale="1.1" id="c-paper">
+                <div class="btn-inner"><img src="images/icon-paper.svg"  alt="paper-icon"></div>
                 </div>
-            <div class="btn btn-scissors " data-tilt data-tilt-scale="1.1" id="c-scissors">
-                <div class="btn-inner"><img src="images/icon-scissors.svg"></div>
+            <div class="btn btn-scissors" data-tilt data-tilt-scale="1.1" id="c-scissors">
+                <div class="btn-inner"><img src="images/icon-scissors.svg" alt="scissors-icon"></div>
                 </div>
-            <div class="btn btn-lizard " data-tilt data-tilt-scale="1.1" id="c-lizard">
-                <div class="btn-inner"><img src="images/icon-lizard.svg"></div>
+            <div class="btn btn-lizard" data-tilt data-tilt-scale="1.1" id="c-lizard">
+                <div class="btn-inner"><img src="images/icon-lizard.svg" alt="lizard-icon"></div>
                 </div>
-            <div class="btn btn-spock  " data-tilt data-tilt-scale="1.1" id="c-spock">
-                <div class="btn-inner"><img src="images/icon-spock.svg"></div>
+            <div class="btn btn-spock" data-tilt data-tilt-scale="1.1" id="c-spock">
+                <div class="btn-inner"><img src="images/icon-spock.svg" alt="spock-icon"></div>
                 </div>
         </div>
         <!-- battle -->
@@ -50,21 +52,21 @@
             <div class="battle-container">
                 <div class="action action-user ">
                     <p class="action-text-lg">YOU PICKED</p>
-                    <div class="btn-lg btn-rock  ">
-                        <div class="btn-inner"><img src="images/icon-rock.svg"></div>
+                    <div class="btn-lg btn-rock none">
+                        <div class="btn-inner"><img src="images/icon-rock.svg" alt="rock-icon"></div>
 
                     </div>
-                    <div class="btn-lg btn-paper ">
-                        <div class="btn-inner"><img src="images/icon-paper.svg"></div>
+                    <div class="btn-lg btn-paper none">
+                        <div class="btn-inner"><img src="images/icon-paper.svg"  alt="paper-icon"></div>
                     </div>
-                    <div class="btn-lg btn-scissors ">
-                        <div class="btn-inner"><img src="images/icon-scissors.svg"></div>
+                    <div class="btn-lg btn-scissors none">
+                        <div class="btn-inner"><img src="images/icon-scissors.svg" alt="scissors-icon"></div>
                     </div>
-                    <div class="btn-lg btn-lizard ">
-                        <div class="btn-inner"><img src="images/icon-lizard.svg"></div>
+                    <div class="btn-lg btn-lizard none">
+                        <div class="btn-inner"><img src="images/icon-lizard.svg" alt="lizard-icon"></div>
                     </div>
-                    <div class="btn-lg btn-spock  ">
-                        <div class="btn-inner"><img src="images/icon-spock.svg"></div>
+                    <div class="btn-lg btn-spock  none">
+                        <div class="btn-inner"><img src="images/icon-spock.svg" alt="spock-icon"></div>
                     </div>
                     <p class="action-text">YOU PICKED</p>
                 </div>
@@ -76,30 +78,20 @@
                 </div>
                 <div class="action action-comp ">
                     <p class="action-text-lg">THE HOUSE PICKED</p>
-                    <div class="btn-lg btn-rock animate__animated  animate__faster  animate__flipInX">
-                        <div class="btn-inner"><img src="images/icon-rock.svg"></div>
-
-                        <!-- <div class="winner-effect">
-                            <div class="winner-inner " style="background-color: rgba(72, 114, 170, .10) ;">
-                            <div class="winner-inner " style="background-color: rgba(72, 114, 170, .15);">
-                            <div class="winner-inner btn-rock " >
-                            </div>
-                            </div>
-                            </div>
-                        </div> -->
-
+                    <div class="btn-lg btn-rock animate__animated  animate__faster  animate__flipInX none">
+                        <div class="btn-inner"><img src="images/icon-rock.svg" alt="rock-icon"></div>
                     </div>
-                    <div class="btn-lg btn-paper animate__animated  animate__faster animate__flipInX">
-                        <div class="btn-inner "><img src="images/icon-paper.svg"></div>
+                    <div class="btn-lg btn-paper animate__animated  animate__faster animate__flipInX none">
+                        <div class="btn-inner "><img src="images/icon-paper.svg" alt="paper-icon"></div>
                     </div>
-                    <div class="btn-lg btn-scissors animate__animated  animate__faster animate__flipInX">
-                        <div class="btn-inner"><img src="images/icon-scissors.svg"></div>
+                    <div class="btn-lg btn-scissors animate__animated  animate__faster animate__flipInX none">
+                        <div class="btn-inner"><img src="images/icon-scissors.svg" alt="scissors-icon"></div>
                     </div>
-                    <div class="btn-lg btn-lizard animate__animated  animate__faster animate__flipInX">
-                        <div class="btn-inner"><img src="images/icon-lizard.svg"></div>
+                    <div class="btn-lg btn-lizard animate__animated  animate__faster animate__flipInX none">
+                        <div class="btn-inner"><img src="images/icon-lizard.svg" alt="lizard-icon"></div>
                     </div>
-                    <div class="btn-lg btn-spock  animate__animated  animate__faster animate__flipInX">
-                        <div class="btn-inner"><img src="images/icon-spock.svg"></div>
+                    <div class="btn-lg btn-spock  animate__animated  animate__faster animate__flipInX none">
+                        <div class="btn-inner"><img src="images/icon-spock.svg" alt="spock-icon"></div>
                     </div>
                     <p class="action-text">THE HOUSE PICKED</p>
 
@@ -112,8 +104,11 @@
                     AGAIN</button>
             </div>
         </div>
+        </main>
 
         <!-- rules modal -->
+        <footer>
+
         <div class=" modal animate__animated  animate__fast none  "
             id="modal">
             <div class="modal-container-lg">
@@ -141,8 +136,10 @@
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
             Coded by <a href="#">Ulaş Can Demirbağ</a>.
           </div>
+        </footer>
+
     </div>
-    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script src="vanilla-tilt.js"></script>
     <script src="app.js"></script>
     
 </body>
