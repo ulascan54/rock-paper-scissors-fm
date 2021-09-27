@@ -211,9 +211,9 @@ body{
     display: none;
 }
 .attribution{
-    @apply absolute bottom-0  left-[50%]  translate-x-[-50%] text-gray-400;
+    @apply absolute bottom-0  left-[50%]  translate-x-[-50%] text-gray-400 text-[0.5rem] md:text-sm;
 }
 .attribution a{
-    @apply font-bold underline  text-white;
+    @apply font-bold underline  text-white ;
 }
 @tailwind utilities;
